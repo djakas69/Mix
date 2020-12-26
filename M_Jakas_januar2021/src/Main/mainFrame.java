@@ -1,3 +1,8 @@
+package Main;
+
+import Enum.enTipVlasnistva;
+import javax.swing.JOptionPane;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -35,7 +40,7 @@ public class mainFrame extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        lblNovoVozilo.setText("Vozilo");
+        lblNovoVozilo.setText("Tip Vozila");
 
         btnDodajVozilo.setText("Dodaj vozilo");
         btnDodajVozilo.addActionListener(new java.awt.event.ActionListener() {
@@ -44,13 +49,13 @@ public class mainFrame extends javax.swing.JFrame {
             }
         });
 
-        txtRegistracija.setText("registracija");
+        txtRegistracija.setText("BG256-OL");
 
         cbTipVozila.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "...", "motocikl", "automobil", "kamion" }));
 
         lblNovoVozilo1.setText("Namena Vozila");
 
-        cbNamenaVozila.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "...", "putnicko", "sluzbeno", "vojno" }));
+        cbNamenaVozila.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "...", "Privatno,", "Sluzbeno,", "Vojno,", "JavniPrevoz   " }));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -71,7 +76,7 @@ public class mainFrame extends javax.swing.JFrame {
                         .addComponent(lblNovoVozilo1)
                         .addGap(18, 18, 18)
                         .addComponent(cbNamenaVozila, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(80, Short.MAX_VALUE))
+                .addContainerGap(63, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -98,15 +103,25 @@ public class mainFrame extends javax.swing.JFrame {
         // TODO add your handling code here:
         try
         {
-            String tipVozila = cbTipVozila.getSelectedItem().toString();
-            System.out.println("tipVozila: " + tipVozila);
+            if(pj == null)
+            {
+                pj = new ProjectJanuar();
+            }
+            boolean res;
+            res = pj.addVozilo(cbTipVozila.getSelectedItem().toString(),enTipVlasnistva.Privatno,"Audi", cbNamenaVozila.getSelectedItem().toString(),"BG258-OL","Dijana","Jakas","b.Arsenija Carnojevica 137");
+            if(res==true)
+            {
+                JOptionPane.showMessageDialog(this, "Uspesno dodano vozilo! " );
+            }
+            else
+            {
+                JOptionPane.showMessageDialog(this, "Vozilo nije dodano " );
+            }
             
-            String namenaVozila = cbNamenaVozila.getSelectedItem().toString();
-            System.out.println("namenaVozila: " + namenaVozila);
         }
         catch(Exception e)
         {
-            String msg= e.getMessage();
+            JOptionPane.showMessageDialog(this, "Greska: " + e.getMessage());
         }
     }//GEN-LAST:event_btnDodajVoziloActionPerformed
 
@@ -145,6 +160,9 @@ public class mainFrame extends javax.swing.JFrame {
             }
         });
     }
+    //region variables
+    private ProjectJanuar pj;
+    //endregion
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnDodajVozilo;
