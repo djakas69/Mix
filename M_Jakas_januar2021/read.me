@@ -14,11 +14,16 @@ Napraviti java aplikaciju koja ce pokazati sledece:
 
 Radno okruzenje: NetBeans 8.2
 Java platform: JDK 1.8
-Libraries: Spring Framework 5.2.2
+Libraries: Spring Framework 4.0.1
 
 Napomena u vezi nasledjivanja: 
 Java programski jezik podrzava samo jednostruko nasledjivanje, da bi se realizovalo visestruko nasledjivanje koristimo interfejse
 
-1. public abstract class Vozilo , koristimo abstract da bi zabranili instanciranje objekata direktno od klase Vozilo. Ova klasa se koriti samo da bi se od nje nasledjivanjem kreirale druge klase, ovom projektu to su Automobil, Motor i Kamion klase
+1. class ProjectJanuar osnovna klasa projekta, ta klasa realizuje dodavanje novog vozila i prikazivanje vozila 
+2. class Stek skladisti podatke u Listu. Metoda dodajUListu dodaje novo Vozilo (bez duplikata), i ako ima mesta. To znaci ako je lista od 20 mesta makimalno se i dodaje do 20 Vozila.
 
-2. public interface INamenaVozila , interfejs koji nam sluzi da u klasi koaja ga implementira obezbedili da se metode iz interfejsa obavezno realizuju. Ovaj interfejs obezbedjuje klasi koja ga koristi da realizuje parametar Namena Vozila (putnicko,
+public abstract class Vozilo , koristimo abstract da bi zabranili instanciranje objekata direktno od klase Vozilo. Ova klasa se koriti samo da bi se od nje nasledjivanjem kreirale druge klase, ovom projektu to su Automobil, Motor i Kamion klase
+
+public interface INamenaVozila , interfejs koji nam sluzi da u klasi koaja ga implementira obezbedili da se metode iz interfejsa obavezno realizuju. Ovaj interfejs obezbedjuje klasi koja ga koristi da realizuje parametar Namena Vozila (putnicko,
+
+class Automobil extends Vozilo implements IVlasnikVozila,IMarkaVozila 
