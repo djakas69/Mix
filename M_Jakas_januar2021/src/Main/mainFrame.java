@@ -1,6 +1,6 @@
 package Main;
 
-import Enum.enTipVlasnistva;
+import BusinessLogic.ProjectJanuar;
 import javax.swing.JOptionPane;
 
 /*
@@ -8,18 +8,31 @@ import javax.swing.JOptionPane;
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 /**
  *
- * @author m.jakas
+ * @author m.jakas mainFrame je klasa nasledjena od JFrame, sluzi da prikaze
+ * User Interface (UI) koriscenjem ove forme korisnik dodaje nova Vozila
  */
 public class mainFrame extends javax.swing.JFrame {
 
+    //region variables
+    private ProjectJanuar projekat; //instanca objekta, koji jos nije inicijalizovan pa je null
+    int godineZivota = 0;
+    //endregion
+
     /**
-     * Creates new form NewJFrame
+     * Creates new form NewJFrame Konstruktor, sluzi za inicijalizaciju
+     * objekata, zato ima metodu initComponents()
      */
     public mainFrame() {
+        //inicijalizacija UI kontrola 
         initComponents();
+        //inticijalizacija objekata porebnih za projekat        
+        projekat = new ProjectJanuar(); // inicijalizacija objekta
+        this.jPanelFirma.setVisible(false);
+        SetKamionPanelVisible();
+        SetAutomobilVisible();
+        SetMotorPartVisible();
     }
 
     /**
@@ -31,100 +44,710 @@ public class mainFrame extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        lblNovoVozilo = new javax.swing.JLabel();
+        groupVlasnistvo = new javax.swing.ButtonGroup();
+        groupTipVozila = new javax.swing.ButtonGroup();
         btnDodajVozilo = new javax.swing.JButton();
-        txtRegistracija = new javax.swing.JTextField();
-        cbTipVozila = new javax.swing.JComboBox<>();
-        lblNovoVozilo1 = new javax.swing.JLabel();
-        cbNamenaVozila = new javax.swing.JComboBox<>();
+        lblPodaciObuducemVlasniku = new javax.swing.JLabel();
+        btnOdustani = new javax.swing.JButton();
+        lblNaruciVozilo = new javax.swing.JLabel();
+        lblAdresa = new javax.swing.JLabel();
+        txtAdresa = new javax.swing.JTextField();
+        rbPrivatniVlasnik = new javax.swing.JRadioButton();
+        rbSluzbenoVozilo = new javax.swing.JRadioButton();
+        jPanelPrivatniKupac = new javax.swing.JPanel();
+        txtIme = new javax.swing.JTextField();
+        lblIme = new javax.swing.JLabel();
+        lblPrezime = new javax.swing.JLabel();
+        txtPrezime = new javax.swing.JTextField();
+        jPanelFirma = new javax.swing.JPanel();
+        txtFirma = new javax.swing.JTextField();
+        lblFirma = new javax.swing.JLabel();
+        lblSluzbenaOznaka = new javax.swing.JLabel();
+        txtSluzbenaOznaka = new javax.swing.JTextField();
+        jPanelKamion = new javax.swing.JPanel();
+        txtKapacitet = new javax.swing.JTextField();
+        lblKapacitet = new javax.swing.JLabel();
+        txtBrojOsovina = new javax.swing.JTextField();
+        lblBrojOsovina = new javax.swing.JLabel();
+        cbImaPrikolicu = new javax.swing.JCheckBox();
+        jPanel1 = new javax.swing.JPanel();
+        lblNovoVozilo = new javax.swing.JLabel();
+        rbAutomobil = new javax.swing.JRadioButton();
+        rbMotor = new javax.swing.JRadioButton();
+        rbKamion = new javax.swing.JRadioButton();
+        cbMarkaVozila = new javax.swing.JComboBox<>();
+        lblMarkaVozila = new javax.swing.JLabel();
+        txtModelVozila = new javax.swing.JTextField();
+        txtBrojSedista = new javax.swing.JTextField();
+        lblBrojSedista = new javax.swing.JLabel();
+        txtBrojVrata = new javax.swing.JTextField();
+        lblBrojVrata = new javax.swing.JLabel();
+        lblRegistracija = new javax.swing.JLabel();
+        lblModelVozila = new javax.swing.JLabel();
+        txtRegistarskaOznaka = new javax.swing.JTextField();
+        txtKubikaza = new javax.swing.JTextField();
+        lblKubikaza = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        lblNovoVozilo.setText("Tip Vozila");
-
-        btnDodajVozilo.setText("Dodaj vozilo");
+        btnDodajVozilo.setForeground(new java.awt.Color(0, 0, 204));
+        btnDodajVozilo.setText("Naruci vozilo");
         btnDodajVozilo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnDodajVoziloActionPerformed(evt);
             }
         });
 
-        txtRegistracija.setText("BG256-OL");
+        lblPodaciObuducemVlasniku.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        lblPodaciObuducemVlasniku.setText("Podaci o buducem vlasniku / firma");
 
-        cbTipVozila.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "...", "motocikl", "automobil", "kamion" }));
+        btnOdustani.setForeground(new java.awt.Color(255, 0, 0));
+        btnOdustani.setText("Odustani");
+        btnOdustani.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnOdustaniActionPerformed(evt);
+            }
+        });
 
-        lblNovoVozilo1.setText("Namena Vozila");
+        lblNaruciVozilo.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        lblNaruciVozilo.setForeground(new java.awt.Color(0, 0, 153));
+        lblNaruciVozilo.setText("Naruci vozilo");
 
-        cbNamenaVozila.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "...", "Privatno,", "Sluzbeno,", "Vojno,", "JavniPrevoz   " }));
+        lblAdresa.setText("Adresa");
+
+        txtAdresa.setText("b. Arsenija Carnojevica 137");
+
+        groupVlasnistvo.add(rbPrivatniVlasnik);
+        rbPrivatniVlasnik.setSelected(true);
+        rbPrivatniVlasnik.setText("Privatni vlasnik");
+        rbPrivatniVlasnik.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                rbPrivatniVlasnikActionPerformed(evt);
+            }
+        });
+
+        groupVlasnistvo.add(rbSluzbenoVozilo);
+        rbSluzbenoVozilo.setText("Sluzbeno vozilo");
+        rbSluzbenoVozilo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                rbSluzbenoVoziloActionPerformed(evt);
+            }
+        });
+
+        jPanelPrivatniKupac.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+
+        txtIme.setText("Nikola");
+        txtIme.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtImeActionPerformed(evt);
+            }
+        });
+
+        lblIme.setText("Ime");
+
+        lblPrezime.setText("Prezime");
+
+        txtPrezime.setText("Jakas");
+
+        javax.swing.GroupLayout jPanelPrivatniKupacLayout = new javax.swing.GroupLayout(jPanelPrivatniKupac);
+        jPanelPrivatniKupac.setLayout(jPanelPrivatniKupacLayout);
+        jPanelPrivatniKupacLayout.setHorizontalGroup(
+            jPanelPrivatniKupacLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanelPrivatniKupacLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanelPrivatniKupacLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelPrivatniKupacLayout.createSequentialGroup()
+                        .addComponent(lblIme)
+                        .addGap(37, 37, 37))
+                    .addGroup(jPanelPrivatniKupacLayout.createSequentialGroup()
+                        .addComponent(lblPrezime)
+                        .addGap(18, 18, 18)))
+                .addGroup(jPanelPrivatniKupacLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addComponent(txtPrezime)
+                    .addComponent(txtIme, javax.swing.GroupLayout.DEFAULT_SIZE, 197, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        jPanelPrivatniKupacLayout.setVerticalGroup(
+            jPanelPrivatniKupacLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanelPrivatniKupacLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanelPrivatniKupacLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblIme)
+                    .addComponent(txtIme, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jPanelPrivatniKupacLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txtPrezime, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblPrezime))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        lblIme.getAccessibleContext().setAccessibleDescription("");
+
+        jPanelFirma.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+
+        txtFirma.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtFirmaActionPerformed(evt);
+            }
+        });
+
+        lblFirma.setText("Firma");
+
+        lblSluzbenaOznaka.setText("Sluzbena Oznaka");
+
+        javax.swing.GroupLayout jPanelFirmaLayout = new javax.swing.GroupLayout(jPanelFirma);
+        jPanelFirma.setLayout(jPanelFirmaLayout);
+        jPanelFirmaLayout.setHorizontalGroup(
+            jPanelFirmaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanelFirmaLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanelFirmaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(lblSluzbenaOznaka)
+                    .addComponent(lblFirma))
+                .addGap(18, 18, 18)
+                .addGroup(jPanelFirmaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(txtFirma, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtSluzbenaOznaka, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        jPanelFirmaLayout.setVerticalGroup(
+            jPanelFirmaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanelFirmaLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanelFirmaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblFirma)
+                    .addComponent(txtFirma, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jPanelFirmaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txtSluzbenaOznaka, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblSluzbenaOznaka))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        jPanelKamion.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+
+        txtKapacitet.setToolTipText("Ovde unosimo samo broj");
+
+        lblKapacitet.setText("Kapacitet");
+
+        txtBrojOsovina.setText("2");
+        txtBrojOsovina.setToolTipText("Ovde unosimo samo broj");
+
+        lblBrojOsovina.setText("Broj Osovina");
+
+        cbImaPrikolicu.setText("Ima Prikolicu");
+
+        javax.swing.GroupLayout jPanelKamionLayout = new javax.swing.GroupLayout(jPanelKamion);
+        jPanelKamion.setLayout(jPanelKamionLayout);
+        jPanelKamionLayout.setHorizontalGroup(
+            jPanelKamionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanelKamionLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(lblKapacitet)
+                .addGap(18, 18, 18)
+                .addComponent(txtKapacitet, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(lblBrojOsovina)
+                .addGap(18, 18, 18)
+                .addComponent(txtBrojOsovina, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(cbImaPrikolicu)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        jPanelKamionLayout.setVerticalGroup(
+            jPanelKamionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanelKamionLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanelKamionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txtKapacitet, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblKapacitet)
+                    .addComponent(txtBrojOsovina, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblBrojOsovina)
+                    .addComponent(cbImaPrikolicu))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        lblNovoVozilo.setText("Izaberi Tip Vozila");
+
+        groupTipVozila.add(rbAutomobil);
+        rbAutomobil.setSelected(true);
+        rbAutomobil.setText("Automobil");
+        rbAutomobil.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                rbAutomobilActionPerformed(evt);
+            }
+        });
+
+        groupTipVozila.add(rbMotor);
+        rbMotor.setText("Motor");
+        rbMotor.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                rbMotorActionPerformed(evt);
+            }
+        });
+
+        groupTipVozila.add(rbKamion);
+        rbKamion.setText("Kamion");
+        rbKamion.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                rbKamionActionPerformed(evt);
+            }
+        });
+
+        cbMarkaVozila.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "...", "Audi", "BMW", "VW", "Peugeot", "Citroen", "Renault", "Seat", "AlfaRomeo", "Fiat", "lamburgini", "Ikarus", "Zastava", "Lada", "Skoda" }));
+        cbMarkaVozila.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cbMarkaVozilaActionPerformed(evt);
+            }
+        });
+
+        lblMarkaVozila.setText("Marka Vozila");
+
+        txtModelVozila.setText("Fabia II");
+        txtModelVozila.setToolTipText("Model Vozila kao sto je  A6,Fabia");
+
+        txtBrojSedista.setText("5");
+        txtBrojSedista.setToolTipText("Ovde unosimo samo broj");
+
+        lblBrojSedista.setText("Broj Sedista");
+
+        txtBrojVrata.setText("3");
+        txtBrojVrata.setToolTipText("Ovde unosimo samo broj");
+
+        lblBrojVrata.setText("Broj Vrata");
+
+        lblRegistracija.setText("Registarska Oznaka");
+
+        lblModelVozila.setText("Model Vozila");
+
+        txtRegistarskaOznaka.setText("BG256-OL");
+
+        txtKubikaza.setToolTipText("Model Vozila kao sto je  A6,Fabia");
+
+        lblKubikaza.setText("Kubikaza");
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(lblRegistracija)
+                                .addGap(18, 18, 18)
+                                .addComponent(txtRegistarskaOznaka, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(lblBrojSedista)
+                                .addGap(18, 18, 18)
+                                .addComponent(txtBrojSedista, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(lblBrojVrata)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(txtBrojVrata, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(0, 0, Short.MAX_VALUE))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(lblMarkaVozila)
+                                .addGap(18, 18, 18)
+                                .addComponent(cbMarkaVozila, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(36, 36, 36)
+                                .addComponent(lblModelVozila)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(txtModelVozila, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(lblKubikaza)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(txtKubikaza, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(84, 84, 84)
+                        .addComponent(lblNovoVozilo)
+                        .addGap(18, 18, 18)
+                        .addComponent(rbAutomobil)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(rbMotor)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(rbKamion)))
+                .addContainerGap())
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(rbAutomobil)
+                    .addComponent(rbMotor)
+                    .addComponent(rbKamion)
+                    .addComponent(lblNovoVozilo))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblModelVozila)
+                    .addComponent(txtModelVozila, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblMarkaVozila)
+                    .addComponent(cbMarkaVozila, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblKubikaza)
+                    .addComponent(txtKubikaza, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txtRegistarskaOznaka, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblRegistracija)
+                    .addComponent(txtBrojSedista, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblBrojSedista)
+                    .addComponent(txtBrojVrata, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblBrojVrata))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(27, 27, 27)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(txtRegistracija, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(btnDodajVozilo))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(lblNovoVozilo)
-                        .addGap(18, 18, 18)
-                        .addComponent(cbTipVozila, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(43, 43, 43)
-                        .addComponent(lblNovoVozilo1)
-                        .addGap(18, 18, 18)
-                        .addComponent(cbNamenaVozila, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(63, Short.MAX_VALUE))
+                        .addGap(22, 22, 22)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jPanelKamion, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(0, 220, Short.MAX_VALUE))
+                            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(176, 176, 176)
+                                .addComponent(lblPodaciObuducemVlasniku)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 220, Short.MAX_VALUE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(11, 11, 11)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(jPanelPrivatniKupac, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(jPanelFirma, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGap(1, 1, 1)
+                                        .addComponent(rbPrivatniVlasnik)
+                                        .addGap(26, 26, 26)
+                                        .addComponent(rbSluzbenoVozilo)))
+                                .addGap(0, 0, Short.MAX_VALUE))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(lblAdresa)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(txtAdresa))
+                                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                                        .addComponent(btnOdustani)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(btnDodajVozilo)))
+                                .addGap(26, 26, 26)))))
+                .addContainerGap())
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                    .addContainerGap(222, Short.MAX_VALUE)
+                    .addComponent(lblNaruciVozilo, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(228, 228, 228)))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(68, 68, 68)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(lblNovoVozilo1)
-                        .addComponent(cbNamenaVozila, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(lblNovoVozilo)
-                        .addComponent(cbTipVozila, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(41, 41, 41)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(63, Short.MAX_VALUE)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jPanelKamion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(lblPodaciObuducemVlasniku)
+                .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnDodajVozilo)
-                    .addComponent(txtRegistracija, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(216, Short.MAX_VALUE))
+                    .addComponent(rbPrivatniVlasnik)
+                    .addComponent(rbSluzbenoVozilo))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jPanelPrivatniKupac, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jPanelFirma, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(33, 33, 33)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txtAdresa, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblAdresa))
+                .addGap(43, 43, 43)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnOdustani)
+                    .addComponent(btnDodajVozilo))
+                .addContainerGap())
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addGap(32, 32, 32)
+                    .addComponent(lblNaruciVozilo)
+                    .addContainerGap(496, Short.MAX_VALUE)))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
+    /*
+    Metod koji se desava na Button Click event
+    Prva faza projekata:  dodavanje vozila pri cemu je maksimum 20, Stek.getMAX()
+     */
     private void btnDodajVoziloActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDodajVoziloActionPerformed
-        // TODO add your handling code here:
-        try
-        {
-            if(pj == null)
-            {
-                pj = new ProjectJanuar();
-            }
+        try {
+
+           
             boolean res;
-            res = pj.addVozilo(cbTipVozila.getSelectedItem().toString(),enTipVlasnistva.Privatno,"Audi", cbNamenaVozila.getSelectedItem().toString(),"BG258-OL","Dijana","Jakas","b.Arsenija Carnojevica 137");
-            if(res==true)
+             //priprema promenjivih pre poziva metode projekat.naruciVozilo()
+            //tip vozila, potrebno je izabrati barem jedan tip
+            String tipVozila="automobil";
+            if(rbMotor.isSelected()==true)
             {
-                JOptionPane.showMessageDialog(this, "Uspesno dodano vozilo! " );
+                tipVozila="motocikl";
             }
-            else
+            if(rbKamion.isSelected()==true)
             {
-                JOptionPane.showMessageDialog(this, "Vozilo nije dodano " );
+                tipVozila="kamion";
             }
             
-        }
-        catch(Exception e)
-        {
+            if(tipVozila.equals("...")==true)
+            {
+                JOptionPane.showMessageDialog(this, "Greska, Morate izabrati tip vozila");
+                return;
+            }
+            //marka vozila, potrebno je izabrati barem jednu marku vozila
+            String markaVozila=cbMarkaVozila.getSelectedItem().toString();
+            if(markaVozila.equals("...")==true)
+            {
+                JOptionPane.showMessageDialog(this, "Greska, Morate izabrati marku vozila");
+                return;
+            }
+            //model vozila, nije neophodan
+            String modelVozila=txtModelVozila.getText();
+           
+            String strBrojVrata=txtBrojVrata.getText();
+            //broj sedista
+            int brojSedista=0;
+            if("automobil".equals(tipVozila))
+            {
+                String strBrojSedista=txtBrojSedista.getText();
+               //ovde se parsira tekst u integer i ako nije dobar tekst imamo exception
+               if(isValidNumeric(strBrojSedista,2,10) == true)
+               {
+                   brojSedista= Integer.parseUnsignedInt(strBrojSedista);
+               }
+               else
+               {
+                    JOptionPane.showMessageDialog(this, "Proverite da li je Broj sedista broj: " + txtBrojSedista.getText() + " u rasponu od 2 do 10");
+                    return;
+               }
+            }
+            //broj vrata
+            int brojVrata=0;
+         
+             if(isValidNumeric(strBrojVrata,2,10) == true)
+             {
+                  brojVrata= Integer.parseUnsignedInt(strBrojVrata);
+             }
+
+            //deo za motor,Kubikaza za primer ima granice od 25 do 5000
+            int kubikaza=0;
+            if("motocikl".equals(tipVozila))
+            {
+                String strKubikaza= txtKubikaza.getText();
+                if(isValidNumeric(strKubikaza,25,5000) == true)
+                {
+                    kubikaza = Integer.parseUnsignedInt(strKubikaza);
+                }
+                else
+                {
+                     JOptionPane.showMessageDialog(this, "Greska Kubikaza nije ispravna: treba biti broj u rasponu 25 do 5000" );
+                }
+            }
+            
+                //if(strKubikaza)
+            //kapacitet
+            int kapacitet=0;
+            //prikolica
+            boolean imaPrikolicu=false;
+            //brojOsovina
+            int brojOsovina=2;
+            if("kamion".equals(tipVozila)==true)
+            {
+                //kapacitet u Tonama
+                String strKapacitet= txtKapacitet.getText();
+                if(isValidNumeric(strKapacitet, 2, 15))
+                {
+                    kapacitet=Integer.parseUnsignedInt(strKapacitet);
+                }
+                //broj osovina
+                String strBrojOsovina= txtBrojOsovina.getText();
+                if(isValidNumeric(strBrojOsovina, 2, 6))
+                {
+                   imaPrikolicu=true;
+                }
+                //ima prikolicu
+               if( cbImaPrikolicu.isSelected()==true)
+               {
+                    brojOsovina=Integer.parseUnsignedInt(strBrojOsovina);
+                }
+            }
+            //NARUCI VOZILO
+            //jedna metoda narucuje vozilo bez obzira na tip (automobil,motor ili kamion) 
+            res = projekat.naruciVozilo(tipVozila, markaVozila,modelVozila, brojSedista, brojVrata, txtRegistarskaOznaka.getText(), txtIme.getText(), txtPrezime.getText(), txtAdresa.getText(), txtSluzbenaOznaka.getText(), txtFirma.getText(),kubikaza,kapacitet,imaPrikolicu,brojOsovina);
+            if (res == true) {
+                JOptionPane.showMessageDialog(this, "Uspesno dodano vozilo! ");
+            } else {
+                JOptionPane.showMessageDialog(this, "Vozilo nije dodano ");
+            }
+ClearInputs();
+        } catch (Exception e) {
             JOptionPane.showMessageDialog(this, "Greska: " + e.getMessage());
         }
     }//GEN-LAST:event_btnDodajVoziloActionPerformed
+    public static boolean isValidNumeric(String strNum,int min, int max) {
+        if (strNum == null) {
+            return false;
+        }
+        try {
+            int d = Integer.parseInt(strNum);
+            
+              if(d > min || d < max)
+              {
+                  return true;
+              }
+              else
+              {
+                  return false;
+              }
+        } catch (NumberFormatException nfe) {
+            return false;
+        }        
+    }
+    private void cbMarkaVozilaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbMarkaVozilaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cbMarkaVozilaActionPerformed
 
+    private void btnOdustaniActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnOdustaniActionPerformed
+       this.dispose();
+    }//GEN-LAST:event_btnOdustaniActionPerformed
+
+    private void rbPrivatniVlasnikActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbPrivatniVlasnikActionPerformed
+      SetVlasnikVozilaVisible();
+    }//GEN-LAST:event_rbPrivatniVlasnikActionPerformed
+
+    private void rbSluzbenoVoziloActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbSluzbenoVoziloActionPerformed
+       SetVlasnikVozilaVisible();
+    }//GEN-LAST:event_rbSluzbenoVoziloActionPerformed
+
+    private void txtImeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtImeActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtImeActionPerformed
+
+    private void txtFirmaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtFirmaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtFirmaActionPerformed
+
+    private void rbAutomobilActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbAutomobilActionPerformed
+       SetKamionPanelVisible();
+       SetAutomobilVisible();
+       SetMotorPartVisible();
+    }//GEN-LAST:event_rbAutomobilActionPerformed
+
+    private void rbMotorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbMotorActionPerformed
+        SetKamionPanelVisible();
+        SetAutomobilVisible();
+        SetMotorPartVisible();
+    }//GEN-LAST:event_rbMotorActionPerformed
+
+    private void rbKamionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbKamionActionPerformed
+        SetKamionPanelVisible();
+        SetAutomobilVisible();
+        SetMotorPartVisible();
+    }//GEN-LAST:event_rbKamionActionPerformed
+    private void SetKamionPanelVisible()
+    {
+         if(rbKamion.isSelected()==true)
+        {
+            //jPanelKamion.setEnabled(true);
+            lblKapacitet.setEnabled(true);
+            txtKapacitet.setEnabled(true);
+            lblBrojOsovina.setEnabled(true);
+            txtBrojOsovina.setEnabled(true);
+            cbImaPrikolicu.setEnabled(true);
+        }
+        else
+        {
+            //jPanelKamion.setEnabled(false);
+            lblKapacitet.setEnabled(false);
+            txtKapacitet.setEnabled(false);
+            lblBrojOsovina.setEnabled(false);
+            txtBrojOsovina.setEnabled(false);
+            cbImaPrikolicu.setEnabled(false);
+        }
+    }
+     private void SetAutomobilVisible()
+    {
+         if(rbAutomobil.isSelected()==true)
+        {
+            lblBrojSedista.setEnabled(true);
+            txtBrojSedista.setEnabled(true);
+            lblBrojVrata.setEnabled(true);
+            txtBrojVrata.setEnabled(true);
+            
+        }
+        else
+        {
+            lblBrojSedista.setEnabled(false);
+            txtBrojSedista.setEnabled(false);
+            lblBrojVrata.setEnabled(false);
+            txtBrojVrata.setEnabled(false);
+        }
+    }
+      private void SetMotorPartVisible()
+    {
+         if(rbMotor.isSelected()==true)
+        {
+           lblKubikaza.setEnabled(true);
+           txtKubikaza.setEnabled(true);
+            
+        }
+        else
+        {
+           lblKubikaza.setEnabled(false);
+           txtKubikaza.setEnabled(false);
+        }
+    }
+      private void ClearInputs()
+      {
+          txtModelVozila.setText("");
+          txtKubikaza.setText("");
+          txtKapacitet.setText("");
+          txtRegistarskaOznaka.setText("");
+          txtBrojOsovina.setText("");
+          txtBrojSedista.setText("");
+          txtBrojVrata.setText("");
+          cbImaPrikolicu.setSelected(false);
+          txtIme.setText("");
+          txtPrezime.setText("");
+          txtFirma.setText("");
+          txtSluzbenaOznaka.setText("");
+          txtAdresa.setText("");
+      }
+    private void SetVlasnikVozilaVisible()
+    {
+        if(rbPrivatniVlasnik.isSelected() == true)
+        {
+            
+            //postavljamo deo za privatno lice da se vidi
+            this.jPanelPrivatniKupac.setVisible(true);
+            //postavljamo deo za Firmu da ne bude vidljivo
+            this.jPanelFirma.setVisible(false);
+        }
+        else
+        {
+            //postavljamo deo za privatno lice da se ne vidi
+             this.jPanelPrivatniKupac.setVisible(false);
+             //postavljamo deo za Firmu da bude vidljivo    
+              this.jPanelFirma.setVisible(true);
+        }
+    }
     /**
      * @param args the command line arguments
      */
@@ -160,16 +783,51 @@ public class mainFrame extends javax.swing.JFrame {
             }
         });
     }
-    //region variables
-    private ProjectJanuar pj;
-    //endregion
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnDodajVozilo;
-    private javax.swing.JComboBox<String> cbNamenaVozila;
-    private javax.swing.JComboBox<String> cbTipVozila;
+    private javax.swing.JButton btnOdustani;
+    private javax.swing.JCheckBox cbImaPrikolicu;
+    private javax.swing.JComboBox<String> cbMarkaVozila;
+    private javax.swing.ButtonGroup groupTipVozila;
+    private javax.swing.ButtonGroup groupVlasnistvo;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanelFirma;
+    private javax.swing.JPanel jPanelKamion;
+    private javax.swing.JPanel jPanelPrivatniKupac;
+    private javax.swing.JLabel lblAdresa;
+    private javax.swing.JLabel lblBrojOsovina;
+    private javax.swing.JLabel lblBrojSedista;
+    private javax.swing.JLabel lblBrojVrata;
+    private javax.swing.JLabel lblFirma;
+    private javax.swing.JLabel lblIme;
+    private javax.swing.JLabel lblKapacitet;
+    private javax.swing.JLabel lblKubikaza;
+    private javax.swing.JLabel lblMarkaVozila;
+    private javax.swing.JLabel lblModelVozila;
+    private javax.swing.JLabel lblNaruciVozilo;
     private javax.swing.JLabel lblNovoVozilo;
-    private javax.swing.JLabel lblNovoVozilo1;
-    private javax.swing.JTextField txtRegistracija;
+    private javax.swing.JLabel lblPodaciObuducemVlasniku;
+    private javax.swing.JLabel lblPrezime;
+    private javax.swing.JLabel lblRegistracija;
+    private javax.swing.JLabel lblSluzbenaOznaka;
+    private javax.swing.JRadioButton rbAutomobil;
+    private javax.swing.JRadioButton rbKamion;
+    private javax.swing.JRadioButton rbMotor;
+    private javax.swing.JRadioButton rbPrivatniVlasnik;
+    private javax.swing.JRadioButton rbSluzbenoVozilo;
+    private javax.swing.JTextField txtAdresa;
+    private javax.swing.JTextField txtBrojOsovina;
+    private javax.swing.JTextField txtBrojSedista;
+    private javax.swing.JTextField txtBrojVrata;
+    private javax.swing.JTextField txtFirma;
+    private javax.swing.JTextField txtIme;
+    private javax.swing.JTextField txtKapacitet;
+    private javax.swing.JTextField txtKubikaza;
+    private javax.swing.JTextField txtModelVozila;
+    private javax.swing.JTextField txtPrezime;
+    private javax.swing.JTextField txtRegistarskaOznaka;
+    private javax.swing.JTextField txtSluzbenaOznaka;
     // End of variables declaration//GEN-END:variables
 }

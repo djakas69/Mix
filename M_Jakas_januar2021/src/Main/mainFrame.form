@@ -1,6 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 
 <Form version="1.3" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JFrameFormInfo">
+  <NonVisualComponents>
+    <Component class="javax.swing.ButtonGroup" name="groupVlasnistvo">
+    </Component>
+    <Component class="javax.swing.ButtonGroup" name="groupTipVozila">
+    </Component>
+  </NonVisualComponents>
   <Properties>
     <Property name="defaultCloseOperation" type="int" value="3"/>
   </Properties>
@@ -23,106 +29,619 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Group type="102" alignment="0" attributes="0">
-              <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
+          <Group type="102" attributes="0">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" attributes="0">
-                      <Component id="txtRegistracija" min="-2" pref="169" max="-2" attributes="0"/>
-                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                      <Component id="btnDodajVozilo" min="-2" max="-2" attributes="0"/>
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="22" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" attributes="0">
+                              <Component id="jPanelKamion" max="-2" attributes="0"/>
+                              <EmptySpace min="0" pref="220" max="32767" attributes="0"/>
+                          </Group>
+                          <Component id="jPanel1" max="32767" attributes="0"/>
+                      </Group>
                   </Group>
-                  <Group type="102" attributes="0">
-                      <Component id="lblNovoVozilo" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="cbTipVozila" min="-2" pref="143" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="43" max="-2" attributes="0"/>
-                      <Component id="lblNovoVozilo1" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="cbNamenaVozila" min="-2" pref="143" max="-2" attributes="0"/>
+                  <Group type="102" alignment="1" attributes="0">
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace min="-2" pref="176" max="-2" attributes="0"/>
+                              <Component id="lblPodaciObuducemVlasniku" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace pref="220" max="32767" attributes="0"/>
+                          </Group>
+                          <Group type="102" attributes="0">
+                              <EmptySpace min="-2" pref="11" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <Component id="jPanelPrivatniKupac" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="jPanelFirma" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <EmptySpace min="-2" pref="1" max="-2" attributes="0"/>
+                                      <Component id="rbPrivatniVlasnik" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
+                                      <Component id="rbSluzbenoVozilo" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                              </Group>
+                              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="1" attributes="0">
+                              <Group type="103" groupAlignment="1" attributes="0">
+                                  <Group type="102" attributes="0">
+                                      <Component id="lblAdresa" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                                      <Component id="txtAdresa" max="32767" attributes="0"/>
+                                  </Group>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <Component id="btnOdustani" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace max="32767" attributes="0"/>
+                                      <Component id="btnDodajVozilo" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                              </Group>
+                              <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
                   </Group>
               </Group>
-              <EmptySpace pref="63" max="32767" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
+          </Group>
+          <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
+              <Group type="102" alignment="1" attributes="0">
+                  <EmptySpace pref="222" max="32767" attributes="0"/>
+                  <Component id="lblNaruciVozilo" min="-2" pref="165" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="228" max="-2" attributes="0"/>
+              </Group>
           </Group>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Group type="102" alignment="0" attributes="0">
-              <EmptySpace min="-2" pref="68" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="103" alignment="0" groupAlignment="3" attributes="0">
-                      <Component id="lblNovoVozilo1" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="cbNamenaVozila" alignment="3" min="-2" max="-2" attributes="0"/>
-                  </Group>
-                  <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="lblNovoVozilo" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="cbTipVozila" alignment="3" min="-2" max="-2" attributes="0"/>
-                  </Group>
-              </Group>
-              <EmptySpace min="-2" pref="41" max="-2" attributes="0"/>
+          <Group type="102" alignment="1" attributes="0">
+              <EmptySpace pref="63" max="32767" attributes="0"/>
+              <Component id="jPanel1" min="-2" max="-2" attributes="0"/>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Component id="jPanelKamion" min="-2" max="-2" attributes="0"/>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Component id="lblPodaciObuducemVlasniku" min="-2" max="-2" attributes="0"/>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="btnDodajVozilo" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="txtRegistracija" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="rbPrivatniVlasnik" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="rbSluzbenoVozilo" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace pref="216" max="32767" attributes="0"/>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Component id="jPanelPrivatniKupac" min="-2" max="-2" attributes="0"/>
+                  <Component id="jPanelFirma" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="txtAdresa" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="lblAdresa" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace min="-2" pref="43" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="btnOdustani" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="btnDodajVozilo" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace max="-2" attributes="0"/>
+          </Group>
+          <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
+              <Group type="102" alignment="0" attributes="0">
+                  <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
+                  <Component id="lblNaruciVozilo" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace pref="496" max="32767" attributes="0"/>
+              </Group>
           </Group>
       </Group>
     </DimensionLayout>
   </Layout>
   <SubComponents>
-    <Component class="javax.swing.JLabel" name="lblNovoVozilo">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Tip Vozila"/>
-      </Properties>
-    </Component>
     <Component class="javax.swing.JButton" name="btnDodajVozilo">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Dodaj vozilo"/>
+        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="cc" green="0" red="0" type="rgb"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Naruci vozilo"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnDodajVoziloActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JTextField" name="txtRegistracija">
+    <Component class="javax.swing.JLabel" name="lblPodaciObuducemVlasniku">
       <Properties>
-        <Property name="text" type="java.lang.String" value="BG256-OL"/>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Tahoma" size="14" style="0"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Podaci o buducem vlasniku / firma"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JComboBox" name="cbTipVozila">
+    <Component class="javax.swing.JButton" name="btnOdustani">
       <Properties>
-        <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-          <StringArray count="4">
-            <StringItem index="0" value="..."/>
-            <StringItem index="1" value="motocikl"/>
-            <StringItem index="2" value="automobil"/>
-            <StringItem index="3" value="kamion"/>
-          </StringArray>
+        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="0" green="0" red="ff" type="rgb"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Odustani"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnOdustaniActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JLabel" name="lblNaruciVozilo">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Tahoma" size="18" style="0"/>
+        </Property>
+        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="99" green="0" red="0" type="rgb"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Naruci vozilo"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="lblAdresa">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Adresa"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="txtAdresa">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="b. Arsenija Carnojevica 137"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JRadioButton" name="rbPrivatniVlasnik">
+      <Properties>
+        <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+          <ComponentRef name="groupVlasnistvo"/>
+        </Property>
+        <Property name="selected" type="boolean" value="true"/>
+        <Property name="text" type="java.lang.String" value="Privatni vlasnik"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="rbPrivatniVlasnikActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JRadioButton" name="rbSluzbenoVozilo">
+      <Properties>
+        <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+          <ComponentRef name="groupVlasnistvo"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Sluzbeno vozilo"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="rbSluzbenoVoziloActionPerformed"/>
+      </Events>
+    </Component>
+    <Container class="javax.swing.JPanel" name="jPanelPrivatniKupac">
+      <Properties>
+        <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+          <Border info="org.netbeans.modules.form.compat2.border.BevelBorderInfo">
+            <BevelBorder/>
+          </Border>
         </Property>
       </Properties>
-      <AuxValues>
-        <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
-      </AuxValues>
-    </Component>
-    <Component class="javax.swing.JLabel" name="lblNovoVozilo1">
+
+      <Layout>
+        <DimensionLayout dim="0">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <Group type="102" alignment="0" attributes="0">
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="102" alignment="1" attributes="0">
+                          <Component id="lblIme" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="37" max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="102" alignment="0" attributes="0">
+                          <Component id="lblPrezime" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
+                      </Group>
+                  </Group>
+                  <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                      <Component id="txtPrezime" max="32767" attributes="0"/>
+                      <Component id="txtIme" pref="197" max="32767" attributes="0"/>
+                  </Group>
+                  <EmptySpace max="32767" attributes="0"/>
+              </Group>
+          </Group>
+        </DimensionLayout>
+        <DimensionLayout dim="1">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <Group type="102" alignment="0" attributes="0">
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="lblIme" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="txtIme" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="txtPrezime" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="lblPrezime" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace max="32767" attributes="0"/>
+              </Group>
+          </Group>
+        </DimensionLayout>
+      </Layout>
+      <SubComponents>
+        <Component class="javax.swing.JTextField" name="txtIme">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Nikola"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtImeActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JLabel" name="lblIme">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Ime"/>
+          </Properties>
+          <AccessibilityProperties>
+            <Property name="AccessibleContext.accessibleDescription" type="java.lang.String" value=""/>
+          </AccessibilityProperties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="lblPrezime">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Prezime"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="txtPrezime">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Jakas"/>
+          </Properties>
+        </Component>
+      </SubComponents>
+    </Container>
+    <Container class="javax.swing.JPanel" name="jPanelFirma">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Namena Vozila"/>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JComboBox" name="cbNamenaVozila">
-      <Properties>
-        <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-          <StringArray count="5">
-            <StringItem index="0" value="..."/>
-            <StringItem index="1" value="Privatno,"/>
-            <StringItem index="2" value="Sluzbeno,"/>
-            <StringItem index="3" value="Vojno,"/>
-            <StringItem index="4" value="JavniPrevoz   "/>
-          </StringArray>
+        <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+          <Border info="org.netbeans.modules.form.compat2.border.BevelBorderInfo">
+            <BevelBorder/>
+          </Border>
         </Property>
       </Properties>
-      <AuxValues>
-        <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
-      </AuxValues>
-    </Component>
+
+      <Layout>
+        <DimensionLayout dim="0">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <Group type="102" alignment="0" attributes="0">
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Component id="lblSluzbenaOznaka" min="-2" max="-2" attributes="0"/>
+                      <Component id="lblFirma" alignment="0" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Component id="txtFirma" min="-2" pref="153" max="-2" attributes="0"/>
+                      <Component id="txtSluzbenaOznaka" min="-2" pref="156" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace max="32767" attributes="0"/>
+              </Group>
+          </Group>
+        </DimensionLayout>
+        <DimensionLayout dim="1">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <Group type="102" alignment="0" attributes="0">
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="lblFirma" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="txtFirma" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="txtSluzbenaOznaka" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="lblSluzbenaOznaka" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace max="32767" attributes="0"/>
+              </Group>
+          </Group>
+        </DimensionLayout>
+      </Layout>
+      <SubComponents>
+        <Component class="javax.swing.JTextField" name="txtFirma">
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtFirmaActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JLabel" name="lblFirma">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Firma"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="lblSluzbenaOznaka">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Sluzbena Oznaka"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="txtSluzbenaOznaka">
+        </Component>
+      </SubComponents>
+    </Container>
+    <Container class="javax.swing.JPanel" name="jPanelKamion">
+      <Properties>
+        <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+          <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
+            <LineBorder/>
+          </Border>
+        </Property>
+      </Properties>
+
+      <Layout>
+        <DimensionLayout dim="0">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <Group type="102" alignment="0" attributes="0">
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Component id="lblKapacitet" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                  <Component id="txtKapacitet" min="-2" pref="65" max="-2" attributes="0"/>
+                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                  <Component id="lblBrojOsovina" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                  <Component id="txtBrojOsovina" min="-2" pref="35" max="-2" attributes="0"/>
+                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                  <Component id="cbImaPrikolicu" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace max="32767" attributes="0"/>
+              </Group>
+          </Group>
+        </DimensionLayout>
+        <DimensionLayout dim="1">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <Group type="102" alignment="0" attributes="0">
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="txtKapacitet" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="lblKapacitet" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="txtBrojOsovina" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="lblBrojOsovina" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="cbImaPrikolicu" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace max="32767" attributes="0"/>
+              </Group>
+          </Group>
+        </DimensionLayout>
+      </Layout>
+      <SubComponents>
+        <Component class="javax.swing.JTextField" name="txtKapacitet">
+          <Properties>
+            <Property name="toolTipText" type="java.lang.String" value="Ovde unosimo samo broj"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="lblKapacitet">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Kapacitet"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="txtBrojOsovina">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="2"/>
+            <Property name="toolTipText" type="java.lang.String" value="Ovde unosimo samo broj"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="lblBrojOsovina">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Broj Osovina"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JCheckBox" name="cbImaPrikolicu">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Ima Prikolicu"/>
+          </Properties>
+        </Component>
+      </SubComponents>
+    </Container>
+    <Container class="javax.swing.JPanel" name="jPanel1">
+
+      <Layout>
+        <DimensionLayout dim="0">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <Group type="102" attributes="0">
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Group type="102" alignment="0" attributes="0">
+                                  <Component id="lblRegistracija" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                                  <Component id="txtRegistarskaOznaka" min="-2" pref="169" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="lblBrojSedista" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                                  <Component id="txtBrojSedista" min="-2" pref="31" max="-2" attributes="0"/>
+                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                  <Component id="lblBrojVrata" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                  <Component id="txtBrojVrata" min="-2" pref="35" max="-2" attributes="0"/>
+                                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                              </Group>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <Component id="lblMarkaVozila" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                                  <Component id="cbMarkaVozila" min="-2" pref="123" max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" pref="36" max="-2" attributes="0"/>
+                                  <Component id="lblModelVozila" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                  <Component id="txtModelVozila" min="-2" pref="96" max="-2" attributes="0"/>
+                                  <EmptySpace max="32767" attributes="0"/>
+                                  <Component id="lblKubikaza" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                  <Component id="txtKubikaza" min="-2" pref="96" max="-2" attributes="0"/>
+                              </Group>
+                          </Group>
+                      </Group>
+                      <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace min="-2" pref="84" max="-2" attributes="0"/>
+                          <Component id="lblNovoVozilo" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                          <Component id="rbAutomobil" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                          <Component id="rbMotor" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                          <Component id="rbKamion" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                  </Group>
+                  <EmptySpace max="-2" attributes="0"/>
+              </Group>
+          </Group>
+        </DimensionLayout>
+        <DimensionLayout dim="1">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <Group type="102" alignment="0" attributes="0">
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="rbAutomobil" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="rbMotor" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="rbKamion" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="lblNovoVozilo" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="lblModelVozila" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="txtModelVozila" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="lblMarkaVozila" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="cbMarkaVozila" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="lblKubikaza" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="txtKubikaza" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="txtRegistarskaOznaka" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="lblRegistracija" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="txtBrojSedista" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="lblBrojSedista" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="txtBrojVrata" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="lblBrojVrata" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace max="32767" attributes="0"/>
+              </Group>
+          </Group>
+        </DimensionLayout>
+      </Layout>
+      <SubComponents>
+        <Component class="javax.swing.JLabel" name="lblNovoVozilo">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Izaberi Tip Vozila"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JRadioButton" name="rbAutomobil">
+          <Properties>
+            <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+              <ComponentRef name="groupTipVozila"/>
+            </Property>
+            <Property name="selected" type="boolean" value="true"/>
+            <Property name="text" type="java.lang.String" value="Automobil"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="rbAutomobilActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JRadioButton" name="rbMotor">
+          <Properties>
+            <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+              <ComponentRef name="groupTipVozila"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Motor"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="rbMotorActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JRadioButton" name="rbKamion">
+          <Properties>
+            <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+              <ComponentRef name="groupTipVozila"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Kamion"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="rbKamionActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JComboBox" name="cbMarkaVozila">
+          <Properties>
+            <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+              <StringArray count="15">
+                <StringItem index="0" value="..."/>
+                <StringItem index="1" value="Audi"/>
+                <StringItem index="2" value="BMW"/>
+                <StringItem index="3" value="VW"/>
+                <StringItem index="4" value="Peugeot"/>
+                <StringItem index="5" value="Citroen"/>
+                <StringItem index="6" value="Renault"/>
+                <StringItem index="7" value="Seat"/>
+                <StringItem index="8" value="AlfaRomeo"/>
+                <StringItem index="9" value="Fiat"/>
+                <StringItem index="10" value="lamburgini"/>
+                <StringItem index="11" value="Ikarus"/>
+                <StringItem index="12" value="Zastava"/>
+                <StringItem index="13" value="Lada"/>
+                <StringItem index="14" value="Skoda"/>
+              </StringArray>
+            </Property>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cbMarkaVozilaActionPerformed"/>
+          </Events>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+          </AuxValues>
+        </Component>
+        <Component class="javax.swing.JLabel" name="lblMarkaVozila">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Marka Vozila"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="txtModelVozila">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Fabia II"/>
+            <Property name="toolTipText" type="java.lang.String" value="Model Vozila kao sto je  A6,Fabia"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="txtBrojSedista">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="5"/>
+            <Property name="toolTipText" type="java.lang.String" value="Ovde unosimo samo broj"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="lblBrojSedista">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Broj Sedista"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="txtBrojVrata">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="3"/>
+            <Property name="toolTipText" type="java.lang.String" value="Ovde unosimo samo broj"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="lblBrojVrata">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Broj Vrata"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="lblRegistracija">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Registarska Oznaka"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="lblModelVozila">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Model Vozila"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="txtRegistarskaOznaka">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="BG256-OL"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="txtKubikaza">
+          <Properties>
+            <Property name="toolTipText" type="java.lang.String" value="Model Vozila kao sto je  A6,Fabia"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="lblKubikaza">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Kubikaza"/>
+          </Properties>
+        </Component>
+      </SubComponents>
+    </Container>
   </SubComponents>
 </Form>

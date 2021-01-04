@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Main;
+package BusinessLogic;
 
 /**
  *
@@ -14,7 +14,14 @@ public class VlasnikVozila {
     private String prezime;   
     private String adresa;
     
-    
+     public VlasnikVozila() {
+     
+    }
+    public VlasnikVozila(String Ime, String Prezime, String Adresa) {
+        this.ime= Ime;
+        this.prezime = Prezime;
+        this.adresa = Adresa;
+    }
     public String getVlaskinVozila() {
         return ime + " " + prezime;
     }
@@ -25,7 +32,7 @@ public class VlasnikVozila {
         res = res + ", " + adresa;
         return res;
     }
-
+   
     public void setVlaskikVozilaSaAdresom(String Ime, String Prezime, String Adresa) {
         this.ime= Ime;
         this.prezime = Prezime;
