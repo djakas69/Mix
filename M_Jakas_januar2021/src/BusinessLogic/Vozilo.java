@@ -1,14 +1,8 @@
 package BusinessLogic;
 
-
 /**
  *
  * @author m.jakas
- * koristimo abstract da zabranimo instanciranje ove klase
- * posto je ovoosnovna klasa  sluzi za nasledjivanje
- * Klase Automobil,Motor i Kamion se nasledjuju od ove klase 
- * Enum EN_TipVlasnistva cuva u sebi moguce vrednosti za tip vlasnistva
- * Privatno,Sluzbeno, Vojno, JavniPrevoz  
  */
 public abstract class Vozilo {
     //region VARIABLES
@@ -16,7 +10,7 @@ public abstract class Vozilo {
     private String registracionaOznaka;             //BG-258OL
     private java.time.LocalDate godinaProizvodnje;  //30.12.2007
     private String markaVozila;                     //Skoda
-    private String modelVozila;                       //Fabia II
+    private String modelVozila;                     //Fabia II
 	/**
 	 * Ceska
 	 */

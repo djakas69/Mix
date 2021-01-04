@@ -6,8 +6,9 @@
 package Interfaces;
 
 /**
- *
- * @author d.jakas
+ * @author m.jakas
+ * @version 1.0
+ * @created 04-Jan-2021 01:29:32
  */
 public interface IMarkaVozila {
     public void setMarkaVozila(String MarkaVozila);

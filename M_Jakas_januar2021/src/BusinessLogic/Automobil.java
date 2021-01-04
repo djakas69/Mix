@@ -3,14 +3,9 @@ package BusinessLogic;
 import Interfaces.IRegistracija;
 import Interfaces.ISluzbenoVozilo;
 
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 /**
  *
- * @author d.jakas 9 i 10 tacke zahteva
+ * @author m.jakas 9 i 10 tacke zahteva
  */
 public class Automobil extends Vozilo implements ISluzbenoVozilo, IRegistracija {
 
